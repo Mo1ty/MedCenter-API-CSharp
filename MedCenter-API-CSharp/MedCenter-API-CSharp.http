@@ -1,0 +1,6 @@
+@MedCenter_API_CSharp_HostAddress = http://localhost:5120
+
+GET {{MedCenter_API_CSharp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
