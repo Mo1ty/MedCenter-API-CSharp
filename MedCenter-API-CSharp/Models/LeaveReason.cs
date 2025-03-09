@@ -4,19 +4,20 @@ namespace MedCenter_API_CSharp.Models;
 
 public class LeaveReason : GenericEntity
 {
-    private string _name;
-    private string _description;
+    public string Name { get; set; }
+    public string Description { get; set; }
 
-    public string Name { get => _name; set => _name = value; }
-    public string Description { get => _description; set => _description = value; }
-
-    public LeaveReason(string name) {
-        _name = name;
-        _description = "";
+    public LeaveReason(long id, string name)
+    {
+        Id = id;
+        Name = name;
+        Description = "";
     }
 
-    public LeaveReason(string name, string description) {
-        _name = name;
-        _description = description;
+    public LeaveReason(long id, string name, string description)
+    {
+        Id = id;
+        Name = name;
+        Description = description;
     }
 }
