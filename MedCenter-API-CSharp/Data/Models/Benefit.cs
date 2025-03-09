@@ -9,7 +9,7 @@
 
 
         //Navigation
-        public List<Client_Benefit> Client_Benefits { get; set; }
+        public List<ClientBenefit> ClientBenefits { get; set; }
 
     }
 }

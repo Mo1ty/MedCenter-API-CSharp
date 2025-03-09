@@ -9,7 +9,7 @@ namespace MedCenter_API_CSharp.Data
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Benefit> Benefits { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Client_Benefit> Client_Benefits { get; set; }
+        public DbSet<ClientBenefit> Client_Benefits { get; set; }
         public DbSet<ClientAccount> ClientAccounts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Promocode> Promocodes { get; set; }
@@ -32,14 +32,14 @@ namespace MedCenter_API_CSharp.Data
                 .WithOne(ca => ca.Client)
                 .HasForeignKey<ClientAccount>(ca => ca.ClientId);
 
-            modelBuilder.Entity<Client_Benefit>()
+            modelBuilder.Entity<ClientBenefit>()
                 .HasOne(c => c.Client)
-                .WithMany(cb => cb.Client_Benefits)
+                .WithMany(cb => cb.ClientBenefits)
                 .HasForeignKey(c => c.ClientId);
 
-            modelBuilder.Entity<Client_Benefit>()
+            modelBuilder.Entity<ClientBenefit>()
                 .HasOne(b => b.Benefit)
-                .WithMany(cb => cb.Client_Benefits)
+                .WithMany(cb => cb.ClientBenefits)
                 .HasForeignKey(b => b.BenefitId);
 
             base.OnModelCreating(modelBuilder);

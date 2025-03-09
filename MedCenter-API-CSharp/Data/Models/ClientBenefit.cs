@@ -1,6 +1,6 @@
 ﻿namespace MedCenter_API_CSharp.Data.Models
 {
-    public class Client_Benefit
+    public class ClientBenefit
     {
 
         public int ClientId { get; set; }

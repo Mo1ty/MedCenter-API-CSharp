@@ -10,9 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString") ?? 
-    throw new InvalidOperationException("Connection string 'DefaultConnectionString' not found.")));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+        )
+    );
 
 builder.Services.AddScoped(typeof(IEntityRepository<>), typeof(EntityRepository<>));
 

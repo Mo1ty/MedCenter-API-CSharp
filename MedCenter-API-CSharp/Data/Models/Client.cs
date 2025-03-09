@@ -13,7 +13,7 @@
         public int ContactId { get; set; }
         public Contact Contact { get; set; } = null!;
 
-        public List<Client_Benefit> Client_Benefits { get; set; }
+        public List<ClientBenefit> ClientBenefits { get; set; }
 
     }
 }
