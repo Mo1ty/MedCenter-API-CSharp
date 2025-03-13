@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MedCenter_API_CSharp.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace MedCenter_API_CSharp.Data.Repositories
+namespace MedCenter_API_CSharp.Repositories.Async
 {
     public class EntityRepository<T> : IEntityRepository<T> where T : class
     {

@@ -1,6 +1,7 @@
 using MedCenter_API_CSharp.Data;
-using MedCenter_API_CSharp.Data.Repositories;
+using MedCenter_API_CSharp.Repositories.Async;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
