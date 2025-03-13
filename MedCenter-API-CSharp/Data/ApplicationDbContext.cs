@@ -22,7 +22,7 @@ namespace MedCenter_API_CSharp.Data
                 .WithOne(c => c.Address)
                 .HasForeignKey<Contact>(c => c.AddressId); */
 
-            modelBuilder.Entity<Contact>()
+            /*modelBuilder.Entity<Contact>()
                 .HasOne(c => c.Client)
                 .WithOne(c => c.Contact)
                 .HasForeignKey<Client>(c => c.ContactId);
@@ -30,7 +30,7 @@ namespace MedCenter_API_CSharp.Data
             modelBuilder.Entity<Client>()
                 .HasOne(c => c.ClientAccount)
                 .WithOne(ca => ca.Client)
-                .HasForeignKey<ClientAccount>(ca => ca.ClientId);
+                .HasForeignKey<ClientAccount>(ca => ca.ClientId);*/
 
             modelBuilder.Entity<ClientBenefit>()
                 .HasOne(c => c.Client)
