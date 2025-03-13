@@ -17,10 +17,10 @@ namespace MedCenter_API_CSharp.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Address>()
+            /*modelBuilder.Entity<Address>()
                 .HasOne(a => a.Contact)
                 .WithOne(c => c.Address)
-                .HasForeignKey<Contact>(c => c.AddressId); 
+                .HasForeignKey<Contact>(c => c.AddressId); */
 
             modelBuilder.Entity<Contact>()
                 .HasOne(c => c.Client)

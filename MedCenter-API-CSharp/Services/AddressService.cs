@@ -47,8 +47,7 @@ namespace MedCenter_API_CSharp.Services
                 .AsNoTracking()
                 .FirstOrDefaultAsync(a => a.Id == id);
 
-            if (address is null)
-                return null;
+            if (address is null) return null;
 
             return address.ToAddressDto();
         }
@@ -66,10 +65,15 @@ namespace MedCenter_API_CSharp.Services
             await _dbContext.SaveChangesAsync();            
         }
 
+
         public async Task DeleteAddressAsync(long id)
         {
             var address = await _dbContext.Addresses.FindAsync(id) 
                 ?? throw new ArgumentNullException($"Couldn't find address with id of {id}");
+
+            /*await _dbContext.Addresses
+                .Where(address => address.Id == id)
+                .ExecuteDeleteAsync();*/
 
             _dbContext.Remove(address);
             await _dbContext.SaveChangesAsync();

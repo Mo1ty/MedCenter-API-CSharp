@@ -1,4 +1,5 @@
-﻿using MedCenter_API_CSharp.Data.Dtos;
+﻿using MedCenter_API_CSharp.Data;
+using MedCenter_API_CSharp.Data.Dtos;
 
 namespace MedCenter_API_CSharp.Services
 {

@@ -1,5 +1,6 @@
 using MedCenter_API_CSharp.Data;
 using MedCenter_API_CSharp.Repositories.Async;
+using MedCenter_API_CSharp.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -19,6 +20,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     );
 
 builder.Services.AddScoped(typeof(IEntityRepository<>), typeof(EntityRepository<>));
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
 var app = builder.Build();
 
