@@ -1,4 +1,4 @@
-﻿namespace MedCenter_API_CSharp.Data.Repositories
+﻿namespace MedCenter_API_CSharp.Repositories.Async
 {
     public interface IEntityRepository<T> where T : class
     {

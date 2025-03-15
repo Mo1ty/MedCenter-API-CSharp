@@ -1,4 +1,4 @@
-namespace MedCenter_API_CSharp.Repository.Common;
+namespace MedCenter_API_CSharp.Repositories.Common;
 
 using Models.Generic;
 
