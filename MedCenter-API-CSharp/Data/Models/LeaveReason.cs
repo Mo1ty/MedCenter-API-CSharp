@@ -7,14 +7,7 @@ public class LeaveReason : GenericEntity
     public string Name { get; set; }
     public string Description { get; set; }
 
-    public LeaveReason(long id, string name)
-    {
-        Id = id;
-        Name = name;
-        Description = "";
-    }
-
-    public LeaveReason(long id, string name, string description)
+    public LeaveReason(long id, string name, string description = "")
     {
         Id = id;
         Name = name;

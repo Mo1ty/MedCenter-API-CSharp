@@ -5,7 +5,7 @@ namespace MedCenter_API_CSharp.Data;
 
 public partial class ApplicationDbContext : DbContext
 {
-    private readonly string _connectionString = "server=localhost;user=***;password=***;database=***";
+    private readonly string _connectionString = "server=localhost;user=root;password=***;database=mydb";
     private readonly ServerVersion _serverVersion = ServerVersion.Parse("8.4.4-mysql");
     
     public DbSet<Doctor> Doctors { get; set; }
