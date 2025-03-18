@@ -1,4 +1,7 @@
-﻿namespace MedCenter_API_CSharp.Data.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MedCenter_API_CSharp.Data.Models
 {
     public class ClientAccount
     {        
@@ -9,17 +12,19 @@
 
 
         //Navigation
-        public int ClientId { get; set; }
+        [Key]
+        [ForeignKey("Client")]
+        public long ClientId { get; set; }
         public Client Client { get; set; } = null!;
 
 
-        public ClientAccount(string email, string login, string password, int clientId)
+        /*public ClientAccount(string email, string login, string password, long clientId)
         {
             Email = email;
             Login = login;
             Password = password;
             ClientId = clientId;
-        }
+        }*/
 
     }
 }

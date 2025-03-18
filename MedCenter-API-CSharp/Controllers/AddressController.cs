@@ -1,5 +1,5 @@
 ﻿using MedCenter_API_CSharp.Data.Dtos;
-using MedCenter_API_CSharp.Services;
+using MedCenter_API_CSharp.Services.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedCenter_API_CSharp.Controllers

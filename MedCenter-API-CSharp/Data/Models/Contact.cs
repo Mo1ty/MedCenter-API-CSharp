@@ -3,8 +3,8 @@
 namespace MedCenter_API_CSharp.Data.Models
 {
     public class Contact : GenericEntity
-    {        
-
+    {
+        
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateOnly BirthDate { get; set; }

@@ -4,9 +4,10 @@ namespace MedCenter_API_CSharp.Models;
 
 public class ShiftType : GenericEntity
 {
-    public TimeOnly StartTime { get; set; }
 
+    public TimeOnly StartTime { get; set; }
     public TimeOnly EndTime { get; set; }
+
 
     public ShiftType(long id, TimeOnly startTime, TimeOnly endTime)
     {
@@ -14,4 +15,5 @@ public class ShiftType : GenericEntity
         StartTime = startTime;
         EndTime = endTime;
     }
+
 }

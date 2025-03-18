@@ -6,25 +6,28 @@ namespace MedCenter_API_CSharp.Data.Mappings
     public static class AddressMapping
     {
 
-        public static Address ToEntity(this AddressDto addressDto, long id)
+        public static Address ToEntity(this AddressDto addressDto)
         {
-            return new Address(
-                id,
-                addressDto.City,
-                addressDto.PostalCode,
-                addressDto.Street,
-                addressDto.HouseNumber);
+            return new Address()
+            {
+                Id = addressDto.Id,
+                City = addressDto.City,
+                PostalCode = addressDto.PostalCode,
+                Street = addressDto.Street,
+                HouseNumber = addressDto.HouseNumber
+            };
         }
 
 
-        public static Address ToEntity(this CreateUpdateAddressDto createUpdateAddressDto, long id)
+        public static Address ToEntity(this CreateUpdateAddressDto createUpdateAddressDto)
         {
-            return new Address(
-                id,
-                createUpdateAddressDto.City,
-                createUpdateAddressDto.PostalCode,
-                createUpdateAddressDto.Street,
-                createUpdateAddressDto.HouseNumber);
+            return new Address()
+            {
+                City = createUpdateAddressDto.City,
+                PostalCode = createUpdateAddressDto.PostalCode,
+                Street = createUpdateAddressDto.Street,
+                HouseNumber = createUpdateAddressDto.HouseNumber
+            };
         }
 
 

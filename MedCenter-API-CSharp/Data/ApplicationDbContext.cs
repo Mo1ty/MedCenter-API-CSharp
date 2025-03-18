@@ -1,4 +1,5 @@
-﻿using MedCenter_API_CSharp.Data.Models;
+﻿using MedCenter_API_CSharp.Data.Configurations;
+using MedCenter_API_CSharp.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedCenter_API_CSharp.Data
@@ -12,25 +13,18 @@ namespace MedCenter_API_CSharp.Data
         public DbSet<ClientBenefit> Client_Benefits { get; set; }
         public DbSet<ClientAccount> ClientAccounts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Promocode> Promocodes { get; set; }
+        public DbSet<Promocode> Promocodes { get; set; }        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*modelBuilder.Entity<Address>()
-                .HasOne(a => a.Contact)
-                .WithOne(c => c.Address)
-                .HasForeignKey<Contact>(c => c.AddressId); */
 
-            /*modelBuilder.Entity<Contact>()
-                .HasOne(c => c.Client)
-                .WithOne(c => c.Contact)
-                .HasForeignKey<Client>(c => c.ContactId);
+            modelBuilder.ApplyConfiguration(new AddressConfugiration());
 
-            modelBuilder.Entity<Client>()
-                .HasOne(c => c.ClientAccount)
-                .WithOne(ca => ca.Client)
-                .HasForeignKey<ClientAccount>(ca => ca.ClientId);*/
+            // Client Benefit relationship
+
+            /*modelBuilder.Entity<ClientBenefit>()
+                .HasKey(cb => new { cb.ClientId, cb.BenefitId });
 
             modelBuilder.Entity<ClientBenefit>()
                 .HasOne(c => c.Client)
@@ -40,7 +34,7 @@ namespace MedCenter_API_CSharp.Data
             modelBuilder.Entity<ClientBenefit>()
                 .HasOne(b => b.Benefit)
                 .WithMany(cb => cb.ClientBenefits)
-                .HasForeignKey(b => b.BenefitId);
+                .HasForeignKey(b => b.BenefitId);*/
 
             base.OnModelCreating(modelBuilder);
         }        

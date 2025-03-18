@@ -10,14 +10,15 @@ namespace MedCenter_API_CSharp.Data.Models
 
         //Navigation
 
-        public int ContactId { get; set; }
+        public long ContactId { get; set; }
         public Contact Contact { get; set; } = null!;
 
         public List<ClientBenefit>? ClientBenefits { get; set; }
-        
 
-        public Client(DateTime registrationDate, int contactId)
+
+        public Client(long id, DateTime registrationDate, long contactId)
         {
+            Id = id;
             RegistrationDate = registrationDate;
             ContactId = contactId;
         }

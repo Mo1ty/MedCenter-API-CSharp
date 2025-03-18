@@ -5,15 +5,24 @@ namespace MedCenter_API_CSharp.Models;
 
 public class Doctor : GenericEntity
 {
-    public string Contact { get; set; }
-    public ShiftType ShiftType { get; set; }
+
+    public long ContactId { get; set; }
+    public string Contact { get; set; } = null!;
+
+    public long ShiftTypeId { get; set; }
+    public ShiftType ShiftType { get; set; } = null!;
+
     public string Cabinet { get; set; }
 
-    public Doctor(long id, string contact, ShiftType shiftType, string cabinet)
+    public List<Specialty>? Specialties { get; set; }
+
+
+    public Doctor(long id, long contactId, long shiftTypeId, string cabinet)
     {
         Id = id;
-        Contact = contact;
-        ShiftType = shiftType;
+        ContactId = contactId;
+        ShiftTypeId = shiftTypeId;
         Cabinet = cabinet;
     }
+
 }

@@ -13,8 +13,9 @@ namespace MedCenter_API_CSharp.Data.Models
         public List<ClientBenefit>? ClientBenefits { get; set; }
 
 
-        public Benefit(string name, string description)
+        public Benefit(long id, string name, string description)
         {
+            Id = id;
             Name = name;
             Description = description;
         }

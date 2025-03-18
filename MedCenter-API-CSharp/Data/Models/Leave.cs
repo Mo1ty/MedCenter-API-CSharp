@@ -4,20 +4,24 @@ namespace MedCenter_API_CSharp.Models;
 
 public class Leave : GenericEntity
 {
-    public Doctor Doctor { get; set; }
 
-    public LeaveReason LeaveReason { get; set; }
+    public long DoctorId { get; set; }
+    public Doctor Doctor { get; set; } = null!;
+
+    public long LeaveReasonId { get; set; }
+    public LeaveReason LeaveReason { get; set; } = null!;
 
     public DateOnly StartDate { get; set; }
-
     public DateOnly EndDate { get; set; }
 
-    public Leave(long id, Doctor doctor, LeaveReason leaveReason, DateOnly startDate, DateOnly endDate)
+
+    public Leave(long id, long doctorId, long leaveReasonId, DateOnly startDate, DateOnly endDate)
     {
         Id = id;
-        Doctor = doctor;
-        LeaveReason = leaveReason;
+        DoctorId = doctorId;
+        LeaveReasonId = leaveReasonId;
         StartDate = startDate;
         EndDate = endDate;
     }
+
 }

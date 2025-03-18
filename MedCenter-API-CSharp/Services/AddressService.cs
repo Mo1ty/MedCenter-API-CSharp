@@ -1,6 +1,7 @@
 ﻿using MedCenter_API_CSharp.Data;
 using MedCenter_API_CSharp.Data.Dtos;
 using MedCenter_API_CSharp.Data.Mappings;
+using MedCenter_API_CSharp.Services.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedCenter_API_CSharp.Services
@@ -21,9 +22,7 @@ namespace MedCenter_API_CSharp.Services
 
         public async Task<AddressDto> CreateAddressAsync(CreateUpdateAddressDto createAddressDto)
         {
-            long id = _dbContext.Addresses.Max(a => a.Id) + 1;
-
-            var address = createAddressDto.ToEntity(id);
+            var address = createAddressDto.ToEntity();
 
             await _dbContext.Addresses.AddAsync(address);
             await _dbContext.SaveChangesAsync();
@@ -60,7 +59,7 @@ namespace MedCenter_API_CSharp.Services
 
             _dbContext.Entry(address)
                 .CurrentValues
-                .SetValues(updatedAddressDto.ToEntity(id));
+                .SetValues(updatedAddressDto.ToEntity());
 
             await _dbContext.SaveChangesAsync();            
         }

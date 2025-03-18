@@ -1,25 +1,31 @@
-﻿namespace MedCenter_API_CSharp.Data.Models
-{
-    public class ClientBenefit
-    {        
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
-        public int ClientId { get; set; }
+namespace MedCenter_API_CSharp.Data.Models
+{
+
+    [PrimaryKey(nameof(ClientId), nameof(BenefitId))]
+    public class ClientBenefit
+    {
+
+        public long ClientId { get; set; }
         public Client Client { get; set; } = null!;
 
-        public int BenefitId { get; set; }
+        public long BenefitId { get; set; }
         public Benefit Benefit { get; set; } = null!;
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
 
-        public ClientBenefit(int clientId, int benefitId, DateTime startDate, DateTime endDate)
+        /*public ClientBenefit(long clientId, long benefitId, DateTime startDate, DateTime endDate)
         {
             ClientId = clientId;
             BenefitId = benefitId;
             StartDate = startDate;
             EndDate = endDate;
-        }
+        }*/
 
     }
 }

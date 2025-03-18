@@ -1,6 +1,7 @@
 ﻿using MedCenter_API_CSharp.Data;
 using MedCenter_API_CSharp.Data.Dtos;
 using MedCenter_API_CSharp.Data.Mappings;
+using MedCenter_API_CSharp.Services.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedCenter_API_CSharp.Services

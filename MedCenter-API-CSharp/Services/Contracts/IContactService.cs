@@ -1,7 +1,7 @@
 ﻿using MedCenter_API_CSharp.Data;
 using MedCenter_API_CSharp.Data.Dtos;
 
-namespace MedCenter_API_CSharp.Services
+namespace MedCenter_API_CSharp.Services.Contracts
 {
     public interface IContactService
     {
