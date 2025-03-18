@@ -1,9 +1,10 @@
 ﻿using MedCenter_API_CSharp.Data.Models;
+using MedCenter_API_CSharp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MedCenter_API_CSharp.Data
 {
-    public partial class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
+    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
     {
 
         public DbSet<Address> Addresses { get; set; }
@@ -13,6 +14,13 @@ namespace MedCenter_API_CSharp.Data
         public DbSet<ClientAccount> ClientAccounts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Promocode> Promocodes { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<DoctorAccount> DoctorAccounts { get; set; }
+        public DbSet<Leave> DoctorLeaves { get; set; }
+        public DbSet<LeaveReason> LeaveReasons { get; set; }
+        public DbSet<ShiftType> ShiftTypes { get; set; }
+        public DbSet<Specialty> Specialties { get; set; }
+        public DbSet<Treatment> Treatments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
