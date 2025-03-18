@@ -1,9 +1,8 @@
-using MedCenter_API_CSharp.Models.Generic;
-
 namespace MedCenter_API_CSharp.Models;
 
-public class LeaveReason : GenericEntity
+public class LeaveReason
 {
+    public long Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
 

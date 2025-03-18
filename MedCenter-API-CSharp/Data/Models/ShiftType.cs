@@ -1,9 +1,8 @@
-using MedCenter_API_CSharp.Models.Generic;
-
 namespace MedCenter_API_CSharp.Models;
 
-public class ShiftType : GenericEntity
+public class ShiftType
 {
+    public long Id { get; set; }
     public TimeOnly StartTime { get; set; }
 
     public TimeOnly EndTime { get; set; }

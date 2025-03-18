@@ -1,9 +1,8 @@
-using MedCenter_API_CSharp.Models.Generic;
-
 namespace MedCenter_API_CSharp.Models;
 
-public class Treatment : GenericEntity
+public class Treatment
 {
+    public long Id { get; set; }
     public Specialty? Specialty { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }

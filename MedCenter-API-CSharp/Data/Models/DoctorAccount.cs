@@ -1,9 +1,8 @@
-using MedCenter_API_CSharp.Models.Generic;
-
 namespace MedCenter_API_CSharp.Models;
 
-public class DoctorAccount : GenericEntity
+public class DoctorAccount
 {
+    public long Id { get; set; }
     public string Email { get; set; }
     public string Login { get; set; }
     public string Password { get; set; }

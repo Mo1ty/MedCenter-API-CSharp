@@ -3,7 +3,7 @@
     public class Client
     {
 
-        public int Id { get; set; }
+        public long Id { get; set; }
         public DateTime RegistrationDate { get; set; }
 
 
